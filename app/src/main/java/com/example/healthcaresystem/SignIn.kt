@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 class SignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,12 @@ class SignIn : AppCompatActivity() {
         nutdangnhap.setOnClickListener {
             val intent = Intent(this, MainPage::class.java)
             startActivity(intent) // Chuyển đến SecondActivity
+        }
+        val returnButton = findViewById<ImageButton>(R.id.returnButton)
+        returnButton.setOnClickListener {
+            val intent = Intent(this, StartScreen::class.java)
+            startActivity(intent) // Chuyển đến SecondActivity
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right) // Slide left when going back
         }
 
     }
