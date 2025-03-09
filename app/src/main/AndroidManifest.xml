@@ -13,20 +13,33 @@
         android:theme="@style/Theme.HealthCareSystem"
         tools:targetApi="31">
         <activity
-            android:name=".MainPage"
+            android:name=".StartScreen"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".Intro3"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
-            android:exported="true">
+            android:name=".Intro2"
+            android:exported="false" />
+        <activity
+            android:name=".Intro1"
+            android:exported="true"
+            android:theme="@style/Theme.HealthCareSystem">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignIn"
+            android:exported="true" />
+        <activity
+            android:name=".MainPage"
+            android:exported="true" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
     </application>
 
 </manifest>
