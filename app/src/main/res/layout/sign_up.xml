@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/main"
+android:id="@+id/main_sign_up"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".MainActivity">
+tools:context=".SignUp">
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/signuptitle"
     android:text="Đăng Ký"
-    android:textSize="35sp"
+    android:textSize="35dp"
     android:textStyle="bold"
     android:textColor="@color/black"
     android:gravity="center"
@@ -82,27 +81,48 @@ tools:context=".MainActivity">
     android:layout_centerHorizontal="true"
     android:backgroundTint="@color/cardview_dark_background"
     android:layout_margin="20dp"/>
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/info"
-    android:layout_above="@id/socialicons"
-    android:text="hoặc đăng ký với"
-    android:layout_centerHorizontal="true"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/socialicons"
-    android:gravity="center"
-    android:layout_alignParentBottom="true">
 
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="20dp"></ImageView>
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="20dp"></ImageView>
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signininvite"
+        android:layout_above="@id/info"
+        android:text="Đã có tài khoản? Đăng nhập"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signinlink"
+        android:layout_toRightOf="@id/signininvite"
+        android:layout_above="@id/info"
+        android:text="tại đây"
+        android:clickable="true"
+        android:textColor="#06bb00"
+        android:layout_marginLeft="3dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:layout_above="@id/socialicons"
+        android:text="hoặc đăng ký với"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/socialicons"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"></ImageView>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"></ImageView>
+    </LinearLayout>
 </RelativeLayout>
