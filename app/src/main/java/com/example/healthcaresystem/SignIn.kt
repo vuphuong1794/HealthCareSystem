@@ -35,6 +35,7 @@ class SignIn : AppCompatActivity() {
         returnButton.setOnClickListener {
             val intent = Intent(this, StartScreen::class.java)
             startActivity(intent) // Chuyển đến SecondActivity
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right) // Slide left when going back
         }
 
     }

@@ -34,25 +34,26 @@
         android:textColor="@color/black"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_margin="10dp">
 
         <Button
             android:id="@+id/btnBack"
-            android:layout_width="150dp"
+            android:layout_width="140dp"
             android:layout_height="60dp"
             android:text="TRỞ LẠI"
-            android:layout_margin="30dp"
+            android:layout_margin="20dp"
             android:backgroundTint="@color/grey"
             android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="150dp"
+            android:layout_width="140dp"
             android:layout_height="60dp"
-            android:layout_margin="30dp"
+            android:layout_margin="20dp"
             android:text="TIẾP TỤC"
             android:backgroundTint="@color/bluetheme"
             android:textColor="@color/white"/>

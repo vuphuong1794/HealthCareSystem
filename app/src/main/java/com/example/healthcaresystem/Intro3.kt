@@ -21,12 +21,15 @@ class Intro3 : AppCompatActivity() {
         val backButton = findViewById<TextView>(R.id.btnBack)
         backButton.setOnClickListener {
             val intent = Intent(this, Intro2::class.java)
-            startActivity(intent) // Chuyển đến SecondActivity
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right) // Slide left when going back
         }
+
         val nextButton = findViewById<TextView>(R.id.btnNext)
         nextButton.setOnClickListener {
             val intent = Intent(this, StartScreen::class.java)
-            startActivity(intent) // Chuyển đến SecondActivity
+            startActivity(intent)
         }
+
     }
 }
