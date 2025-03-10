@@ -67,13 +67,21 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun registerUser(username: String, email: String, password: String) {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch { //khởi chạy Coroutine trên background Thread
             try {
                 val response = RetrofitInstance.api.signUp(SignUpRequest(username, email, password))
 
+                //chuyển về main thread
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(this@SignUp, "Đăng ký thành công!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@SignUp, SignIn::class.java))
+                    if (response.isSuccessful) {
+                        //toast chỉ có thể chạy ở main thread
+                        Toast.makeText(this@SignUp, "Đăng ký thành công!", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@SignUp, SignIn::class.java))
+                    } else {
+                        // Lấy lỗi từ API
+                        val errorBody = response.errorBody()?.string()
+                        Toast.makeText(this@SignUp, "Lỗi: $errorBody", Toast.LENGTH_SHORT).show()
+                    }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
@@ -82,4 +90,5 @@ class SignUp : AppCompatActivity() {
             }
         }
     }
+
 }
