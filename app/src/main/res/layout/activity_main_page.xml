@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_page"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainPage">
-
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_page_text"
-        android:text="Trang chu"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:layout_margin="25dp"/>
-</RelativeLayout>
+        android:padding="20dp"
+        android:id="@+id/main_page">
+
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xin chào, User!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="20dp"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng xuất"/>
+    </LinearLayout>

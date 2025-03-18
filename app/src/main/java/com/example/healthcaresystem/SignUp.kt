@@ -60,6 +60,7 @@ class SignUp : AppCompatActivity() {
         val linearLayoutRepass= findViewById<LinearLayout>(R.id.linearrepassword)
         val repasswordInput = linearLayoutRepass.findViewById<EditText>(R.id.repassword)
         val usernameInput = findViewById<EditText>(R.id.username)
+        val phoneInput = findViewById<EditText>(R.id.phonenumber)
 
         val passwordEditText = findViewById<EditText>(R.id.password)
         val passwordEyeIcon = findViewById<ImageView>(R.id.password_eye)
@@ -89,23 +90,24 @@ class SignUp : AppCompatActivity() {
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
             val username = usernameInput.text.toString().trim()
+            val phoneNumber = phoneInput.text.toString().trim()
             val repassword = repasswordInput.text.toString().trim()
 
 
-            if (email.isEmpty() || password.isEmpty() || username.isEmpty() || password!=repassword) {
+            if (email.isEmpty() || password.isEmpty() || username.isEmpty() || phoneNumber.isEmpty() || password!=repassword) {
                 Toast.makeText(this, "Vui lòng điền đầy đủ thông tin"+password+" "+repassword, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            registerUser(username, email, password)
+            registerUser(username, email, phoneNumber, password)
 
         }
     }
 
-    private fun registerUser(username: String, email: String, password: String) {
+    private fun registerUser(username: String, email: String, phone:String, password: String) {
         CoroutineScope(Dispatchers.IO).launch { //khởi chạy Coroutine trên background Thread
             try {
-                val response = RetrofitInstance.api.signUp(SignUpRequest(username, email, password))
+                val response = RetrofitInstance.api.signUp(SignUpRequest(username, email, phone, password))
 
                 //chuyển về main thread
                 withContext(Dispatchers.Main) {

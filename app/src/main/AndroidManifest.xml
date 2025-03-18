@@ -15,11 +15,29 @@
         android:theme="@style/Theme.HealthCareSystem"
         tools:targetApi="31">
         <activity
+            android:name=".AdminUser"
+            android:exported="true"
+            android:label="@string/title_activity_admin_user"
+            android:theme="@style/Theme.HealthCareSystem" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home"
+            android:exported="true"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.HealthCareSystem"></activity>
+        <activity
             android:name=".SignUpSuccess"
             android:exported="false" />
         <activity
             android:name=".StartScreen"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".Intro3"
             android:exported="false" />
@@ -29,13 +47,7 @@
         <activity
             android:name=".Intro1"
             android:exported="true"
-            android:theme="@style/Theme.HealthCareSystem">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.HealthCareSystem"></activity>
         <activity
             android:name=".SignIn"
             android:exported="true" />

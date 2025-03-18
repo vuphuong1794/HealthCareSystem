@@ -1,8 +1,6 @@
 package com.example.healthcaresystem.model
 
-data class SignUpRequest (
-    val name: String,
+data class LoginRequest (
     val email: String,
-    val phone: String,
     val password: String
 )
