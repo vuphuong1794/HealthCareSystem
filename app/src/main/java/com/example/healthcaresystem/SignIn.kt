@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -82,11 +83,13 @@ class SignIn : AppCompatActivity() {
                     } else {
                         val errorBody = response.errorBody()?.string()
                         Toast.makeText(this@SignIn, "Lỗi: $errorBody", Toast.LENGTH_SHORT).show()
+
                     }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@SignIn, "Lỗi: ${e.message}", Toast.LENGTH_SHORT).show()
+                    println("Lỗi API: $e")
                 }
             }
         }
